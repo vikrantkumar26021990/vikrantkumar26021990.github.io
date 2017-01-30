@@ -1,0 +1,31 @@
+@(siteName: String)
+<div class="navbar navbar-fixed-top">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+        </button>
+		<!-- <a class="navbar-brand" href="#">@siteName</a> -->
+		<div class="nav-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li data-bind="visible:!editing()">
+					<a href="#" data-bind="click:toggleEditing"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+				</li>
+				<li data-bind="visible:editing">
+					<a href="#" data-bind="click:savePage"><span class="glyphicon glyphicon-check"></span> Save</a>
+				</li>
+				<li data-bind="visible:editing">
+					<a href="#" data-bind="click:discardChanges"><span class="glyphicon glyphicon-trash"></span> Discard</a>
+				</li>
+				<li data-bind="visible:editing">
+					<a href="#" id="insertPageRowButton" data-bind="click:addRow"><span class="glyphicon glyphicon-plus"></span> Insert Row</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav" data-bind="foreach:editorCommands">
+				<li data-bind="visible:$parent.editing">
+					<a href="#" data-bind="click:exec"><span data-bind="css:icon"></span><span data-bind="html:text"></span></a>
+				</li>
+			</ul>
+			<p class="navbar-text pull-right"><a href="@routes.LoginController.logout" class="navbar-link">Log Out</a></p>
+		</div>
+</div>

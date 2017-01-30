@@ -1,0 +1,32 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET    /                                     controllers.Sites.getPageFromUri(uri = "")
+GET    /login                                controllers.LoginController.login
+POST   /login                                controllers.LoginController.authenticate
+GET    /logout                               controllers.LoginController.logout
+GET    /notfound                             controllers.Application.indexWithNoSiteFound
+GET    /admin-home                           controllers.Application.adminHome
+
+# Map the javascript routes
+GET    /javascriptroutes                     controllers.Application.javascriptRoutes
+
+GET    /api/sites                            controllers.SitesApi.getAllSites
+POST   /api/sites                            controllers.SitesApi.newSite
+GET    /api/sites/:siteId/pages              controllers.SitesApi.getAllPagesBySiteId(siteId: Long)
+POST   /api/sites/:siteId/pages              controllers.SitesApi.newPage(siteId: Long)
+GET    /api/sites/:siteId/pages/:pageId      controllers.SitesApi.getPageById(siteId: Long, pageId: String)
+POST   /api/sites/:siteId/pages/:pageId      controllers.SitesApi.updatePage(siteId: Long, pageId: String)
+GET    /api/sites/:siteId/pages/byuri/       controllers.SitesApi.getPageByUri(siteId: Long, uri = "")
+GET    /api/sites/:siteId/pages/byuri/*uri   controllers.SitesApi.getPageByUri(siteId: Long, uri: String)
+
+# page editor templates
+GET    /api/page-editor/templates/column     controllers.SitesApi.getColumnTemplate
+
+# Map static resources from the /public folder to the /assets URL path
+GET    /assets/*file                         controllers.Assets.at(path="/public", file)
+
+# Map the hosted sites
+GET    /*page                                controllers.Sites.getPageFromUri(page: String)
