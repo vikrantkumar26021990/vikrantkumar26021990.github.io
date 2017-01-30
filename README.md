@@ -1,159 +1,183 @@
-[![license: GPL](https://img.shields.io/badge/license-GPL-green.svg)](http://www.silexlabs.org/silex/silex-licensing/)
-[![Build Status](https://circleci.com/gh/silexlabs/Silex.svg?style=svg)](https://circleci.com/gh/silexlabs/Silex)
-[![status of silex.me instance](http://monitoshi.lexoyo.me/badge/1477989142014-3680)](https://editor.silex.me)
+# [GrapesJS](http://grapesjs.com)
 
-##About Silex, live web creation.
+[![Build Status](https://travis-ci.org/artf/grapesjs.svg?branch=master)](https://travis-ci.org/artf/grapesjs)
 
-Silex, is a free and open source website builder in the cloud. Create websites directly in the browser without writing code. And it is suitable for professional designers to produce great websites without constraints. Silex is also known as the HTML5 editor.
+<p align="center"><img src="http://grapesjs.com/img/grapesjs-front-page-m.jpg" alt="GrapesJS" width="500" align="center"/></p>
+<br/>
 
-![Silex UI](https://github.com/silexlabs/www.silex.me/raw/gh-pages/assets/silex-ui.gif)
+GrapesJS is a free and open source Web Builder Framework which helps you building HTML templates to be used inside sites, newsletters and mobile apps.
+Mainly GrapesJS was designed to be used inside a [CMS] to speed up a creation of dynamic templates. To better understand this concept check the image below
 
-Brought to you by Silex Labs team, promoting free software.
+<br/>
+<p align="center"><img src="http://grapesjs.com/img/gjs-concept.png" alt="GrapesJS - Style Manager" height="400" align="center"/></p>
+<br/>
 
-Links
-* [Silex official website](http://www.silex.me/)
-* [Documentation wiki](https://github.com/silexlabs/Silex/wiki)
-* [questions and answers, bug report, feature requests](http://www.silexlabs.org/silex/)
-* [Silex license is GPL](http://www.silexlabs.org/silex/silex-licensing/)
-* [Road map](https://github.com/silexlabs/Silex/blob/master/docs/roadmap.md) and [change log](https://github.com/silexlabs/Silex/blob/master/docs/change-log.md)
+Generally any 'template system', that you'd find in various applications like CMS, is composed by the **structure** (HTML), **style** (CSS) and **variables**, which are then replaced with other templates and contents on server-side and rendered on client.
 
-News and tutorials
+This demos show examples of what is possible to achieve:
+Webpage Demo - http://grapesjs.com/demo.html
+Newsletter Demo - http://grapesjs.com/demo-newsletter-editor.html
 
-* [Silex blog](http://www.silexlabs.org/category/the-blog/blog-silex/)
-* [subscribe by email](http://eepurl.com/F48q5)
 
-Contact us and let people know about Silex
+## Features
 
-* [Facebook](http://www.facebook.com/silexlabs)
-* [Twitter](https://twitter.com/silexlabs)
-* [Google plus](https://plus.google.com/communities/107373636457908189681)
-* [Contributors list](https://github.com/silexlabs/Silex/blob/master/docs/contributors.md)
 
-##Host an instance of Silex
+* Blocks
+<p align="center"><img src="http://grapesjs.com/img/sc-grapesjs-blocks-prp.jpg" alt="GrapesJS - Block Manager" height="400" align="center"/></p>
 
-If you plan to host Silex for your clients, your users or the community, this section is for you.
+* Style Manager, for component styling<br/>
+<p align="center"><img src="http://grapesjs.com/img/sc-grapesjs-style-2.jpg" alt="GrapesJS - Style Manager" height="400" align="center"/></p>
 
-If you feel like helping and host an instance of Silex as an alternative to the official Silex site http://editor.silex.me/ please let us know so that we can advertise it to the community.
+* Layer Manager, that comes handy with nested elements<br/>
+<p align="center"><img src="http://grapesjs.com/img/sc-grapesjs-layers-2.jpg" alt="GrapesJS - Layer Manager" height="400" align="center"/></p>
 
-You will need a nodejs server, which you can setup yourself or host at [Gandi](https://www.gandi.net/) or [IndieHosters](https://indiehosters.net/shop/product/silex-23) for example.
+* Code Viewer <br/>
+<p align="center"><img src="http://grapesjs.com/img/sc-grapesjs-code.jpg" alt="GrapesJS - Code Viewer" height="300" align="center"/></p>
 
-Download the zip file on github or clone this repository, and then follow the same steps as the developers when they install silex locally on linux - starting at npm install. See instructions bellow.
+* Asset Manager, for uploading and managing images<br/>
+<p align="center"><img src="http://grapesjs.com/img/sc-grapesjs-assets-1.jpg" alt="GrapesJS - Asset Manager" height="250" align="center"/></p>
 
-For the lazy ones, there is the [Heroku One-Click Deploy](https://heroku.com/deploy): [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/silexlabs/Silex/tree/master)
+* Local and remote storage
 
-##Installation on your local computer
+* Default built-in commands (basically for creating and managing different components)
 
-This is for developers only, since our beloved designers can use the [online version](http://editor.silex.me/).
 
-Developers you can clone this repository and start Silex, with nodejs. See instructions bellow.
+## Installation
 
-### Recommended: with Docker
+You can get GrapesJS with `bower install grapesjs` or via `git clone https://github.com/artf/grapesjs.git` to directly use it. For development purpose you should follow instructions below.
 
-Prerequisite :
-* [docker](https://www.docker.com/)
 
-```
-$ docker run -p 6805:6805 silexlabs/silex
-```
+## Development
 
-Open http://localhost:6805/ and you are ready!
+GrapesJS uses [RequireJS](http://requirejs.org/) to organize its files inside `src` folder and [Grunt](http://gruntjs.com/) for build them to `dist`
 
-### local installation on linux or macos or cloud9
+Clone the repository and enter inside the folder
 
-Prerequisite:
-
-* [node.js](http://nodejs.org/) installed
-* [NPM](https://npmjs.org/) installed
-* [python](https://www.python.org/downloads/) (version >= V2.7)
-* [java](https://www.java.com/en/download/index.jsp) (version >= 7)
-
-Clone this repository, and do not forget the sub modules (cloud-explorer and unifile)
-
-```
-$ git clone --recursive https://github.com/silexlabs/Silex.git
+```sh
+$ npm install -g grunt-cli
+$ git clone https://github.com/artf/grapesjs.git
+$ cd grapesjs
 ```
 
-Install all needed modules and build the assets
+Install all necessary dependencies
 
-```
+```sh
 $ npm install
+```
+
+Build GrapesJS
+
+```sh
 $ npm run build
 ```
 
-Start the server and then open [http://localhost:6805/](http://localhost:6805/) - note that the port is 6805, which is easy to remember, since it is the date of sexual revolution started in paris france 8-)
+Launch server, which also gonna watch some files, and try out the demo on `localhost:8000`
 
-```
+```sh
 $ npm start
 ```
 
-> Note for [cloud9](http://c9.io) users: you may want to activate python with this command:
+Tests are already available inside browser on `localhost:8000/test`
 
+If [Grunt](http://gruntjs.com/) is already installed globally you could change the port by using `grunt dev --port 9000`
+
+
+## Usage
+
+JQuery is the only hard dependency so you have to include it before using GrapesJS
+
+```html
+<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
 ```
-$ nada-nix install python
+After that include scripts from GrapesJS with all your configurations
+
+```html
+<link rel="stylesheet" href="path/to/grapes.min.css">
+<script src="path/to/grapes.min.js"></script>
+
+<div id="gjs"></div>
+
+<script type="text/javascript">
+  var editor = grapesjs.init({
+      container : '#gjs',
+      components: '<div class="txt-red">Hello world!</div>',
+      style: '.txt-red{color: red}',
+  });
+</script>
 ```
 
-And finally, take a look at the "available commands" section bellow
+You could also grab the content directly from the element with `fromElement` property
 
-### local installation on Windows
+```html
+<div id="gjs">
+  <div class="txt-red">Hello world!</div>
+  <style>.txt-red{color: red}</style>
+</div>
 
-> instructions provided by Régis RIGAUD:)
+<script type="text/javascript">
+  var editor = grapesjs.init({
+      container : '#gjs',
+      fromElement: true,
+  });
+</script>
+```
 
-Prerequisite:
+For more practical example I suggest to look up the code inside this demo: http://grapesjs.com/demo.html
 
-* [node.js](http://nodejs.org/) installed
-* Git Client installed (e.g. [windows github client](http://windows.github.com/))
-* [NPM installed](https://npmjs.org/)
-* [python](https://www.python.org/downloads/)
 
-Installation of Silex:
+## Configuration
 
-* Launch the "Git Shell"
-* Create a complete clone of Silex Project: git clone --recursive https://github.com/silexlabs/Silex.git
-* Go to Silex's Directory.
-* install depedencies : npm install
+Check the getting started guide here: [wiki]
 
-Start Silex:
 
-* Launch Silex from a command prompt (Silex's Directory): `npm start`
-* Open your favorite browser on http://localhost:6805/ and ENJOY !!!
-* also take a look at the "available commands" section bellow
+## API
 
-### Available commands
+API References (draft) could be found here: [API-Reference]
 
-If you develop or debug Silex, these npm scripts can be used with npm (they are defined in the file [package.json](./package.json))
 
-* `$ npm start` will start the server
-* `$ npm run start:debug` will start the server in debug mode (no error catchall, enable local service to use local file system as a storage)
-* `$ npm run build` will build the client side code (html, css, js), ready for production
-* `$ npm run build:server` this only check that the server scripts are correct
-* `$ npm run watch:client` will watch the html, js and css source folders and rebuild when a file changes
+## Testing
 
-### environment variables
+```sh
+$ npm test
+```
 
-* `PORT`, optional, default: 6805, [used here in the code](dist/server/server.js#L148)
-* `SSL_PORT`, optional, default: to 443, [used here in the code]()
-* `SILEX_FORCE_HTTPS`, optional [used here in the code](dist/server/server.js#102) to force https/ssl (default is `false`)
-* `SILEX_SSL_PRIVATE_KEY`, optional (see ssl section bellow), [used here in the code](dist/server/server.js#L124)
-* `SILEX_SSL_CERTIFICATE`, optional (see ssl section bellow), [used here in the code](dist/server/server.js#L124)
-* `SILEX_SESSION_FOLDER`, optional, default: `dist/sessions`, [used here in the code](dist/server/server.js#L53)
-* `SILEX_DEBUG`, optional, default: `false`, when `true` this will enable the service "www" (storage on the local server in `www/`) with login `admin` and pass `admin`, [used here in the code](dist/server/server.js#L78)
-* `RESTART_ROUTE`, optional, if set it will enable the route `GET {{Silex server instance URL}}/tasks/{{RESTART_ROUTE}}` which will restart the server, [used here in the code](dist/server/silex-tasks.js#L58). See [this article to learn about deployment and why this hack](http://the.webapp.cat/2015/07/Deploy-to-Gandi-Simple-Hosting.html).
-* `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET`: optional, to activate github service, you need to create a github app to get these info ([create a github app](https://github.com/settings/applications/new) to get those)
+## Acknowledgements
 
-### enable https / SSL
+GrapesJS is built on top of this amazing open source projects:
 
-When you start Silex, it looks for the environment variables `SILEX_SSL_PRIVATE_KEY` and `SILEX_SSL_CERTIFICATE`. If they are present, it enables SSL.
+* [Backbone] - gives Backbone to web applications
+* [Backbone.Undo] - a simple Backbone undo-manager
+* [Keymaster] - keyboard shortcuts
+* [CodeMirror] - versatile text editor
+* [Spectrum] - no hassle colorpicker
+* [FontAwesome] - the iconic font and CSS framework
 
-`SILEX_SSL_PRIVATE_KEY` is expected to be the path to a `.key` file, and `SILEX_SSL_CERTIFICATE` the path to a  `.crt`.
 
-##dependencies
+## Sponsors
 
-These are the upstream projects we use in Silex
+The project is sponsored by
 
-* [unifile](https://github.com/silexlabs/unifile), a nodejs server which provides a unified access to cloud services. This projects uses nodejs and these modules: express, dbox, express, googleapis, logger, node-oauth, oauth, path
-* [Cloud explorer](https://github.com/silexlabs/cloud-explorer), a file manager for the cloud services. It is a front end javascript app which connects to a unifile server
-* [Prodotype](https://github.com/silexlabs/Prodotype), Build components and generate a UI to make them editable in your app.
-* [ace](http://ace.c9.io/), an excellent code editor in javascript
-* google closure library and compiler
-* jquery and jquery UI are included in the sites generated by Silex
-* [GLYPHICONS library of precisely prepared monochromatic icons and symbols](http://glyphicons.com/) ([CC license](http://creativecommons.org/licenses/by/3.0/))
+[![Sendloop](http://grapesjs.com/img/sendloop-logo-l.png)](https://sendloop.com)
+
+
+## Support
+
+If you like the project support it with a donation of your choice.
+
+[![PayPalMe](http://grapesjs.com/img/ppme.png)](https://paypal.me/grapesjs)
+
+
+## License
+
+BSD 3-clause
+
+
+[Backbone]: <http://backbonejs.org/>
+[Backbone.Undo]: <http://backbone.undojs.com/>
+[Keymaster]: <https://github.com/madrobby/keymaster>
+[CodeMirror]: <http://codemirror.net/>
+[Spectrum]: <https://github.com/bgrins/spectrum>
+[FontAwesome]: <https://fortawesome.github.io/Font-Awesome/>
+[wiki]: <https://github.com/artf/grapesjs/wiki>
+[API-Reference]: <https://github.com/artf/grapesjs/wiki/API-Reference>
+[CMS]: <https://it.wikipedia.org/wiki/Content_management_system>
