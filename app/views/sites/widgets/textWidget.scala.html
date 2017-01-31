@@ -1,6 +1,0 @@
-@(columnHtml: String, editable: Boolean = true)
-<div class="textWidget">
-	<div class="textWidgetTextBox" @if(editable){data-bind="attr:{'contenteditable':editing()}"}>
-		@Html(columnHtml)
-	</div>
-</div>

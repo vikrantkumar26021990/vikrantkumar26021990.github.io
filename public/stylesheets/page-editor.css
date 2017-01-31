@@ -1,6 +1,0 @@
-.textWidget [contenteditable]:hover {
-    border: 1px grey dotted;
-}
-.textWidget [contenteditable] {
-    border: 1px transparent solid;
-}

@@ -28,7 +28,7 @@ node_modules
 .lock-wscript
 
 # Public (Output) Folder
-public
+dist
 
 # Sass Cache
 .sass-cache

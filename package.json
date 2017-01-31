@@ -1,0 +1,19 @@
+{
+  "name": "bob",
+  "version": "1.2.0",
+  "description": "Project builder to allow me to quickly build up skeletons using my commmonly used tools and templates.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DaJoker29/builder.git"
+  },
+  "author": "Dewitt A. Buckingham, III <captain@zerodaedalus.net> (http://zerodaedalus.com/)",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/DaJoker29/builder/issues"
+  },
+  "homepage": "https://github.com/DaJoker29/builder"
+}
